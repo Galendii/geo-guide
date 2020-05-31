@@ -2,11 +2,7 @@
   "expo": {
     "name": "geo-guide",
     "slug": "geo-guide",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,11 +14,18 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.brenozg.geoguide",
+      "versionCode": 57,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAX8SUWPgr_tZphEKw5IEhMgu2veZpn3_I"
+        }
+      }
     }
   }
 }

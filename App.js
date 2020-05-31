@@ -13,6 +13,8 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import CountriesScreen from "./src/pages/CountriesScreen";
 import ContinentsScreen from "./src/pages/ContinentsScreen";
 import LanguagesScreen from "./src/pages/LanguagesScreen";
+import MapComponent from "./src/components/MapComponent";
+import MapView from "react-native-maps";
 
 //Code
 const Drawer = createDrawerNavigator();
@@ -20,6 +22,11 @@ const Stack = createStackNavigator();
 const MaterialBottomTab = createMaterialBottomTabNavigator();
 
 const App = () => {
+  if (Platform.OS === "android") {
+    // only android needs polyfill
+    require("intl"); // import intl object
+    require("intl/locale-data/jsonp/de-DE"); // load the required locale details
+  }
   return (
     <NavigationContainer>
       <Drawer.Navigator>
